@@ -1,0 +1,17 @@
+{% extends "./base.html" %} {% block body %}
+
+<div class="card">
+    <div class="card-body py-4">
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <h2>Ingrese su código de reservación</h2>
+            <form action="/reservacion/" method="POST">{% csrf_token %}
+                <div class="form-group">
+                    <input type="text" name="codigo_txt" required>
+                    <button type="submit" class="btn btn-success btn-block">Buscar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

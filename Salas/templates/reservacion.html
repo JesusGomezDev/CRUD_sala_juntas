@@ -1,0 +1,15 @@
+{% extends "./base.html" %} {% block body %}
+
+<div class="card">
+    <div class="card-body py-4">
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <form action="/edicion/{{reserva.codigo}}">
+                <h2>¿Desea revisar el registro {{reserva.codigo}}?</h2>
+                <button type="submit" class="btn btn-success btn-block">Continuar</button>
+                <a href="/" class="btn btn-warning">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

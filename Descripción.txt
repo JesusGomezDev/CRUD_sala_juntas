@@ -1,0 +1,5 @@
+Aquí se encuentra todo lo necesario para ejecutar el sistema.
+Encontré algunos problemas para poder solucionarlo, pero dentro de la documentación oficial de Django encontré la forma
+de resolver casi todo.
+Por algún motivo los if dentro de las views en momentos funcionan y en otros momentos no. De igual modo los invito
+a probar y comprobar el funcionamiento del proyecto, agradezo la oportunidad y quedo a la espera de  alguna respuesta.

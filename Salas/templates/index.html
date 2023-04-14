@@ -1,0 +1,42 @@
+{% extends "./base.html" %} {% block body %}
+
+<div class="row py-4">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        <h2>Realice su reservacion</h2>
+        <div class="card">
+            <div class="card-body py-4">
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <a href="reservar/" class="btn btn-success">Reservar</a>
+                    <a href="reservaciones/" class="btn btn-success">Revisar reservación</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+        <div class="table-responsive py-2">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <h2>Reservaciones</h2>
+                        <th>Fecha</th>
+                        <th>Hora de inicio</th>
+                        <th>Hora de finalización</th>
+                        <th>Sala</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for res in reservaciones%}
+                    <tr>
+                        <td>{{res.fecha}}</td>
+                        <td>{{res.inicio}}</td>
+                        <td>{{res.final}}</td>
+                        <td>{{res.sala}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

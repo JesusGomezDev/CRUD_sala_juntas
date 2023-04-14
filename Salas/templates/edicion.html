@@ -1,0 +1,57 @@
+{% extends "./base.html" %} {% block body %}
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="container">
+            <h2>Edición de Reservación</h2>
+            <div class="card">
+                <div class="card">
+                    <div class="card-body py-4">
+                        {% if en_curso %}
+                        <form action="/editar/" method="POST">{% csrf_token %}
+                            <div class="form-group">
+                                <label>Código</label>
+                                <input type="text" name="codigo" value="{{reserva.codigo}}" readonly>
+                                <label>Fecha</label>
+                                <input type="date" name="fecha" value="{{reserva.fecha}}" placeholder="{{reserva.fecha}}" required>
+                                <br>
+                                <label>Inicio</label>
+                                <input type="time" name="hora_inicio" value="{{reserva.inicio}}" readonly required>
+                                <label>Finalización</label>
+                                <input type="time" name="hora_final" value="{{reserva.final}}" readonly required>
+                                <label>Sala</label>
+                                <input type="number" name="sala_seleccionada" value="{{reserva.sala}}" readonly min="1" max="6" required>
+                                <a href="/" class="btn btn-warning">Volver al inicio</a>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <a href="../eliminar/{{reserva.codigo}}" class="btn btn-danger btn-eliminar">Terminar reservación</a>
+                                </div>
+                            </div>
+                        </form>
+                        {% else %}
+                        <form action="/editar/" method="POST">{% csrf_token %}
+                            <div class="form-group">
+                                <label>Código</label>
+                                <input type="text" name="codigo" value="{{reserva.codigo}}" readonly>
+                                <label>Fecha</label>
+                                <input type="date" name="fecha" value="{{reserva.fecha}}" placeholder="{{reserva.fecha}}" required>
+                                <br>
+                                <label>Inicio</label>
+                                <input type="time" name="hora_inicio" value="{{reserva.inicio}}" required>
+                                <label>Finalización</label>
+                                <input type="time" name="hora_final" value="{{reserva.final}}" required>
+                                <label>Sala</label>
+                                <input type="number" name="sala_seleccionada" value="{{reserva.sala}}" readonly min="1" max="6" required>
+                                <button type="submit" class="btn btn-success btn-block">Guardar</button>
+                                <a href="/" class="btn btn-warning">Cancelar edición</a>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <a href="../eliminar/{{reserva.codigo}}" class="btn btn-danger btn-eliminar">Terminar reservación</a>
+                                </div>
+                            </div>
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

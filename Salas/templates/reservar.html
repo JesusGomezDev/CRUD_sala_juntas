@@ -1,0 +1,85 @@
+{% extends "./base.html" %} {% block body %}
+
+<div class="container">
+    <h2>Por favor realice su reservación</h2>
+    <div class="card">
+        <div class="card-body py-4">
+            <form action="/registrar_reservacion/" method="POST">{% csrf_token %}
+                <div class="form-group">
+                    <label>Fecha</label>
+                    <input type="date" name="fecha" required>
+                    <label>Inicio</label>
+                    <input type="time" name="hora_inicio" required>
+                    <label>Finalización</label>
+                    <input type="time" name="hora_final" required>
+                    <label>Sala</label>
+                    <input type="number" name="sala_seleccionada" min="1" max="6" required>
+                    <button type="submit" class="btn btn-success btn-block">Guardar</button>
+                    <div class="table-responsive py-2">
+                        <table>
+                            <tbody>
+                                <td>
+                                    <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                                        <div class="card-header">Sala</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">1</h5>
+                                            <p class="card-text">Un espacio amplio y bien iluminado con agradable vistas al jardín</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                                        <div class="card-header">Sala</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">2</h5>
+                                            <p class="card-text">Una sala elegante con lugares exclusivos</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                                        <div class="card-header">Sala</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">3</h5>
+                                            <p class="card-text">Una sala ideal para juntas pequeñas y privadas</p>
+                                        </div>
+                                    </div>
+                                </td>
+                        </table>
+                        <table>
+                            <td>
+                                <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                                    <div class="card-header">Sala</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">4</h5>
+                                        <p class="card-text">Espacio suficiente para más de 10 personas, ideal para equipos</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                                    <div class="card-header">Sala</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">5</h5>
+                                        <p class="card-text">Una sala con 5 asientos ejecutivos y un proyector para exposisiones</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                                    <div class="card-header">Sala</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">6</h5>
+                                        <p class="card-text">Una sala de gran tamaño para reuiniones con múltiples equipos</p>
+                                    </div>
+                                </div>
+                            </td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

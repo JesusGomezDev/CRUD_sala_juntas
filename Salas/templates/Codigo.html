@@ -1,0 +1,20 @@
+{% extends "./base.html" %} {% block body %}
+
+<div class="card">
+    <div class="card-body py-4">
+        <div class="d-grid gap-2 col-6 mx-auto">
+            {% if libre == True %} {% if diferencia > delta %}
+            <h2>No se permiten reservaciones superiores a dos horas</h2>
+            <h3>Le sugerimos que lo vuelva a intentar con un rango de tiempo aceptable</h3>
+            <a href="../eliminar/{{reserva.codigo}}" class="btn btn-success">Entendido</a> {% else %}
+            <h2>Su código de registro es: {{reserva.codigo}}</h2>
+            <h3>Es muy importante que no lo olvide ya que es necesario para consultar, editar, o cancerlar su reservación</h3>
+            <a href="/" class="btn btn-success">Entendido</a> {% endif %} {% else %}
+            <h2>Esta sala se encuentra reservada</h2>
+            <h3>Intente con otra sala o con otro horario</h3>
+            <a href="../eliminar/{{reserva.codigo}}" class="btn btn-success">Entendido</a> {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
